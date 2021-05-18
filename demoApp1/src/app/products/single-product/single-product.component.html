@@ -1,0 +1,20 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <h3>{{ product.name | uppercase }}</h3>
+  </div>
+  <div class="card-body">
+    <p #desc>{{ product.description }}</p>
+    <strong [ngClass]="product.price < 1000 ? 'abc' : 'pqr'"
+      >Price: {{ product.price }}</strong
+    >
+    <br />
+    <strong
+      ><em>MFG Date: </em
+      >{{ product.mfgDate | date: "medium" | lowercase }}</strong
+    >
+    <br />
+    <ng-content></ng-content>
+    <br />
+    <button class="btn btn-primary" (click)="onEdit()">Edit</button>
+  </div>
+</div>

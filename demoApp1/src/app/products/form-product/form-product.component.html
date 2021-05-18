@@ -1,0 +1,49 @@
+<h2>{{ title }} product</h2>
+<hr />
+<form>
+  <div class="form-group row mb-3" *ngIf="title === 'Edit'">
+    <label for="prodId" class="col-3 col-form-label">Id*</label>
+    <div class="col-9">
+      <input type="text" class="form-control" id="prodId" [(ngModel)]="prodId" [ngModelOptions]="{standalone: true}"
+        readonly />
+    </div>
+  </div>
+  <div class="form-group row mb-3">
+    <label for="name" class="col-3 col-form-label">Name*</label>
+    <div class="col-9">
+      <input type="text" class="form-control" id="name" #name />
+    </div>
+  </div>
+  <div class="form-group row mb-3">
+    <label for="price" class="col-3 col-form-label">Price*</label>
+    <div class="col-9">
+      <input type="text" class="form-control" id="price" name="price" [(ngModel)]="price" />
+    </div>
+  </div>
+  <div class="form-group row mb-3">
+    <label for="description" class="col-3 col-form-label">Description*</label>
+    <div class="col-9">
+      <textarea class="form-control" row="3" id="description" name="description" [(ngModel)]="desc"></textarea>
+    </div>
+  </div>
+  <div class="form-group row mb-3">
+    <label for="mfgDate" class="col-3 col-form-label">Manufacturing date*</label>
+    <div class="col-9">
+      <input type="date" class="form-control" id="mfgDate" name="mfgDate" [ngModel]="mfgDate | date:'y-MM-dd'"
+        (ngModelChange)="mfgDate = $event" />
+    </div>
+  </div>
+  <div class="form-group row mb-3">
+    <div class="col-6" [ngSwitch]="title">
+      <button class="btn btn-primary" *ngSwitchCase="'Add'" (click)="onAdd()">
+        Add
+      </button>
+      <button class="btn btn-warning" *ngSwitchCase="'Edit'">Edit</button>
+    </div>
+    <div class="col-6">
+      <button class="btn btn-danger">Reset</button>
+    </div>
+  </div>
+</form>
+<strong><em>Note:-</em> when you use ngModel in input then name must be
+  assigned</strong>

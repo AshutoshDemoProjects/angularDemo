@@ -1,0 +1,11 @@
+<h1 appBasicHightlight>home works!</h1>
+<a class="nav-link" routerLinkActive="active" [routerLink]="['user', 1001, 'abc']" [queryParams]="{ editable: true }"
+  fragment="xyz">Users Link</a>
+<a class="nav-link" routerLinkActive="active" [routerLink]="['user', 1002, 'pqr']" [queryParams]="{ editable: false }"
+  fragment="xyz">Users Link2</a>
+<!-- <a routerLink="products/add">Add Product</a><br>
+<a routerLink="products/list">List Product</a><br>
+<a routerLink="products/1001">Product 1001</a><br>
+<a routerLink="products/1001/edit">Product 1001 edit</a> -->
+<button class="btn btn-primary" (click)="onLogin()">Login</button> &nbsp;&nbsp;&nbsp;
+<button class="btn btn-danger" (click)="onLogout()">Logout</button>

@@ -1,0 +1,32 @@
+<!-- <h1>{{ product1.name }}</h1>
+<input [value]="product1.name" (input)="onInput($event)" /> -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-4">
+      <div class="d-flex justify-content-around">
+        <button class="btn btn-primary" (click)="onShowForm()">
+          Add Product
+        </button>
+        <a class="btn float-right" routerLink="/products/list">
+          List Product
+        </a>
+      </div>
+      <br />
+      <hr />
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let product of prodArr">
+          <!--  (click)="onProductClick(product)"> -->
+          <a [routerLink]="['/products',product.id]" class="nav-link">{{ product.name }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-8">
+      <!-- <router-outlet></router-outlet> -->
+      <!-- <app-single-product *ngIf="!showForm && !showList" [data]="product">
+        <h1 #xyz>asdlfhasdhkjashdiqyuie dfasdkashdkj asdhaksjdh</h1>
+      </app-single-product>
+      <app-list-product *ngIf="showList && !showForm" [data]="prodArr"></app-list-product>
+      <app-form-product *ngIf="showForm && !showList" (AddProduct)="onAdd($event)"></app-form-product> -->
+    </div>
+  </div>
+</div>
